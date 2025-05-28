@@ -108,11 +108,69 @@ document.addEventListener('DOMContentLoaded', function() {
                 activity: document.getElementById('activity').value
             };
             
-            // Verileri localStorage'a kaydet
-            localStorage.setItem('formData', JSON.stringify(formData));
+            // Beslenme programını hesapla
+            const beslenmeProgrami = hesaplaBeslenmeProgrami(formData);
+            const ogunler = olusturBeslenmeProgrami(beslenmeProgrami.hedefKalori, beslenmeProgrami.makrolar);
             
-            // Sonuç sayfasına yönlendir
-            window.location.href = 'sonuc.html';
+            // Sonuçları göster
+            const sonucHTML = `
+                <div class="bg-dark-secondary rounded-xl shadow-xl p-8 mt-8">
+                    <h2 class="text-2xl font-bold mb-6 text-white">Beslenme Programınız</h2>
+                    <div class="space-y-4">
+                        <div class="bg-dark-primary p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-emerald-400 mb-2">Günlük Kalori ve Makro Besinler</h3>
+                            <p class="text-gray-300">Hedef Kalori: ${beslenmeProgrami.hedefKalori} kcal</p>
+                            <p class="text-gray-300">Protein: ${beslenmeProgrami.makrolar.protein}g</p>
+                            <p class="text-gray-300">Yağ: ${beslenmeProgrami.makrolar.yag}g</p>
+                            <p class="text-gray-300">Karbonhidrat: ${beslenmeProgrami.makrolar.karbonhidrat}g</p>
+                        </div>
+                        
+                        <div class="bg-dark-primary p-4 rounded-lg">
+                            <h3 class="text-lg font-semibold text-emerald-400 mb-2">Öğün Planı</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="text-white font-medium">Kahvaltı</h4>
+                                    <ul class="list-disc list-inside text-gray-300">
+                                        ${ogunler.kahvalti.map(yemek => `<li>${yemek.isim} (${yemek.miktar}g)</li>`).join('')}
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium">Ara Öğün 1</h4>
+                                    <ul class="list-disc list-inside text-gray-300">
+                                        ${ogunler.araOgun1.map(yemek => `<li>${yemek.isim} (${yemek.miktar}g)</li>`).join('')}
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium">Öğle Yemeği</h4>
+                                    <ul class="list-disc list-inside text-gray-300">
+                                        ${ogunler.ogleYemegi.map(yemek => `<li>${yemek.isim} (${yemek.miktar}g)</li>`).join('')}
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium">Ara Öğün 2</h4>
+                                    <ul class="list-disc list-inside text-gray-300">
+                                        ${ogunler.araOgun2.map(yemek => `<li>${yemek.isim} (${yemek.miktar}g)</li>`).join('')}
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-medium">Akşam Yemeği</h4>
+                                    <ul class="list-disc list-inside text-gray-300">
+                                        ${ogunler.aksamYemegi.map(yemek => `<li>${yemek.isim} (${yemek.miktar}g)</li>`).join('')}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Sonuçları sayfaya ekle
+            const sonucContainer = document.createElement('div');
+            sonucContainer.innerHTML = sonucHTML;
+            beslenmeForm.parentNode.appendChild(sonucContainer);
+            
+            // Formu sıfırla
+            beslenmeForm.reset();
         });
     }
 
@@ -130,11 +188,102 @@ document.addEventListener('DOMContentLoaded', function() {
                 days: document.getElementById('days').value
             };
             
-            // Verileri localStorage'a kaydet
-            localStorage.setItem('antrenmanFormData', JSON.stringify(formData));
+            // Antrenman programını oluştur
+            const antrenmanProgrami = olusturAntrenmanProgrami(formData);
             
-            // Antrenman sonuç sayfasına yönlendir
-            window.location.href = 'antrenman-sonuc.html';
+            // Sonuçları göster
+            const sonucHTML = `
+                <div class="bg-dark-secondary rounded-xl shadow-xl p-8 mt-8">
+                    <h2 class="text-2xl font-bold mb-6 text-white">Antrenman Programınız</h2>
+                    <div class="space-y-4">
+                        ${antrenmanProgrami.map((gun, index) => `
+                            <div class="bg-dark-primary p-4 rounded-lg">
+                                <h3 class="text-lg font-semibold text-emerald-400 mb-2">${gun.isim}</h3>
+                                <ul class="list-disc list-inside text-gray-300">
+                                    ${gun.egzersizler.map(egzersiz => `
+                                        <li>${egzersiz.isim} - ${egzersiz.set} set x ${egzersiz.tekrar} tekrar</li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            
+            // Sonuçları sayfaya ekle
+            const sonucContainer = document.createElement('div');
+            sonucContainer.innerHTML = sonucHTML;
+            antrenmanForm.parentNode.appendChild(sonucContainer);
+            
+            // Formu sıfırla
+            antrenmanForm.reset();
         });
     }
-}); 
+});
+
+// Antrenman programı oluşturma fonksiyonu
+function olusturAntrenmanProgrami(formData) {
+    const program = [];
+    
+    // Program stilini belirle
+    if (formData.programStyle === 'fullbody') {
+        // Full Body programı
+        for (let i = 1; i <= formData.days; i++) {
+            program.push({
+                isim: `Gün ${i}`,
+                egzersizler: [
+                    { isim: 'Bench Press', set: 3, tekrar: '8-12' },
+                    { isim: 'Squat', set: 3, tekrar: '8-12' },
+                    { isim: 'Deadlift', set: 3, tekrar: '8-12' },
+                    { isim: 'Pull-up', set: 3, tekrar: '8-12' },
+                    { isim: 'Overhead Press', set: 3, tekrar: '8-12' }
+                ]
+            });
+        }
+    } else {
+        // PPL programı
+        const push = {
+            isim: 'Push Günü',
+            egzersizler: [
+                { isim: 'Bench Press', set: 4, tekrar: '8-12' },
+                { isim: 'Overhead Press', set: 3, tekrar: '8-12' },
+                { isim: 'Incline Dumbbell Press', set: 3, tekrar: '10-12' },
+                { isim: 'Lateral Raise', set: 3, tekrar: '12-15' },
+                { isim: 'Tricep Pushdown', set: 3, tekrar: '12-15' }
+            ]
+        };
+        
+        const pull = {
+            isim: 'Pull Günü',
+            egzersizler: [
+                { isim: 'Deadlift', set: 4, tekrar: '6-8' },
+                { isim: 'Pull-up', set: 3, tekrar: '8-12' },
+                { isim: 'Bent Over Row', set: 3, tekrar: '10-12' },
+                { isim: 'Face Pull', set: 3, tekrar: '12-15' },
+                { isim: 'Bicep Curl', set: 3, tekrar: '12-15' }
+            ]
+        };
+        
+        const legs = {
+            isim: 'Legs Günü',
+            egzersizler: [
+                { isim: 'Squat', set: 4, tekrar: '8-12' },
+                { isim: 'Romanian Deadlift', set: 3, tekrar: '10-12' },
+                { isim: 'Leg Press', set: 3, tekrar: '10-12' },
+                { isim: 'Leg Extension', set: 3, tekrar: '12-15' },
+                { isim: 'Calf Raise', set: 4, tekrar: '15-20' }
+            ]
+        };
+        
+        // Gün sayısına göre programı oluştur
+        if (formData.days === '2') {
+            program.push(push, legs);
+        } else if (formData.days === '3') {
+            program.push(push, pull, legs);
+        } else if (formData.days === '4') {
+            program.push(push, pull, legs, push);
+        }
+    }
+    
+    return program;
+} 
