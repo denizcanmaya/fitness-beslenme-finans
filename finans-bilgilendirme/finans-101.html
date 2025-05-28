@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="tr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finans 101 - Finansal Dünyaya İlk Adım</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            'bg-primary': '#1a1a1a',
+                            'bg-secondary': '#2d2d2d',
+                            'text-primary': '#ffffff',
+                            'text-secondary': '#a0aec0',
+                        }
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(-10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    },
+                    animation: {
+                        fadeIn: 'fadeIn 0.3s ease-out'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-bg-primary text-dark-text-primary min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-dark-bg-secondary shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-2xl font-bold text-blue-500">Finans 101</span>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" id="mobile-menu-button" class="text-dark-text-secondary hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+                <!-- Desktop menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#temel-kavramlar" class="text-dark-text-secondary hover:text-white px-3 py-2 rounded-md text-sm font-medium">Temel Kavramlar</a>
+                        <a href="#piyasa" class="text-dark-text-secondary hover:text-white px-3 py-2 rounded-md text-sm font-medium">Piyasa</a>
+                        <a href="#yatirim" class="text-dark-text-secondary hover:text-white px-3 py-2 rounded-md text-sm font-medium">Yatırım</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#temel-kavramlar" class="text-dark-text-secondary hover:text-white block px-3 py-2 rounded-md text-base font-medium">Temel Kavramlar</a>
+                <a href="#piyasa" class="text-dark-text-secondary hover:text-white block px-3 py-2 rounded-md text-base font-medium">Piyasa</a>
+                <a href="#yatirim" class="text-dark-text-secondary hover:text-white block px-3 py-2 rounded-md text-base font-medium">Yatırım</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative bg-dark-bg-primary overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="hero-section.jpeg" 
+                 alt="Financial Background" 
+                 class="w-full h-full object-cover opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-r from-dark-bg-primary to-dark-bg-primary/80"></div>
+        </div>
+        <div class="max-w-7xl mx-auto">
+            <div class="relative z-10 pb-8 bg-dark-bg-primary/50 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                    <div class="sm:text-center lg:text-left">
+                        <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+                            <span class="block">Finansal Dünyaya</span>
+                            <span class="block text-blue-500">İlk Adımınız</span>
+                        </h1>
+                        <p class="mt-3 text-base text-dark-text-secondary sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            Temel finansal kavramları öğrenin, piyasa dinamiklerini anlayın ve yatırım dünyasına güvenle adım atın.
+                        </p>
+                        <div class="mt-8">
+                            <a href="https://finansalokuryazarlik.gov.tr/" target="_blank" class="block bg-dark-bg-secondary hover:bg-dark-bg-primary transition-all duration-300 rounded-lg p-4 border border-gray-600 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-white group-hover:text-blue-400 transition-colors duration-300">Finansal Okuryazarlık Platformu</h3>
+                                        <p class="text-gray-400 text-sm mt-1 group-hover:text-gray-300 transition-colors duration-300">Finansal okuryazarlığınızı geliştirmek için tıklayın</p>
+                                    </div>
+                                    <i class="fas fa-external-link-alt text-gray-400 group-hover:text-blue-400 group-hover:rotate-12 transition-all duration-300"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Temel Kavramlar Section -->
+    <section id="temel-kavramlar" class="py-12 bg-dark-bg-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-8">
+                <i class="fas fa-book-open text-blue-500 mr-2"></i>
+                Temel Finansal Kavramlar
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Arz-Talep Kartı -->
+                <div class="bg-dark-bg-primary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="arz-talep-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-balance-scale text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Arz ve Talep</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Arz, piyasada sunulan mal ve hizmet miktarını ifade eder. Talep ise tüketicilerin satın alma isteğini gösterir. 
+                        Bu iki güç, piyasa fiyatlarını belirler.
+                    </p>
+                </div>
+
+                <!-- Faiz Kartı -->
+                <div class="bg-dark-bg-primary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="faiz-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-percentage text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Faiz</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Faiz, borç alınan paranın kullanımı karşılığında ödenen bedeldir. 
+                        Merkez bankalarının belirlediği faiz oranları, ekonomiyi etkiler.
+                    </p>
+                </div>
+
+                <!-- Enflasyon Kartı -->
+                <div class="bg-dark-bg-primary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="enflasyon-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chart-line text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Enflasyon</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Enflasyon, fiyatların genel seviyesindeki sürekli artışı ifade eder. 
+                        Satın alma gücünü etkiler ve yatırım kararlarını şekillendirir.
+                    </p>
+                </div>
+
+                <!-- Deflasyon Kartı -->
+                <div class="bg-dark-bg-primary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="deflasyon-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-arrow-down text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Deflasyon</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Deflasyon, fiyatların genel seviyesindeki sürekli düşüşü ifade eder. 
+                        Enflasyonun tersi olarak düşünülebilir.
+                    </p>
+                </div>
+
+                <!-- Likidite Kartı -->
+                <div class="bg-dark-bg-primary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="likidite-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-money-bill-wave text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Likidite</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Likidite, bir varlığın nakite dönüştürülebilme kolaylığını ve hızını ifade eder. 
+                        Piyasa dinamiklerini ve yatırım kararlarını etkiler.
+                    </p>
+                </div>
+
+                <!-- Risk Kartı -->
+                <div class="bg-dark-bg-primary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="risk-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-shield-alt text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Risk ve Getiri</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Risk, yatırımın değer kaybetme olasılığını ve bu kaybın büyüklüğünü ifade eder. 
+                        Genellikle yüksek risk, yüksek getiri potansiyeli taşır.
+                    </p>
+                </div>
+
+                <!-- Borsa Kartı -->
+                <div class="bg-dark-bg-primary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="borsa-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chart-line text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Borsa</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Borsa, menkul kıymetlerin alınıp satıldığı organize piyasadır. 
+                        Şirketlerin hisse senetleri, tahviller ve diğer finansal araçlar burada işlem görür.
+                    </p>
+                </div>
+
+                <!-- Döviz Kuru Kartı -->
+                <div class="bg-dark-bg-primary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="doviz-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-dollar-sign text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Döviz Kuru</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Döviz kuru, bir ülkenin para biriminin başka bir ülkenin para birimi karşısındaki değerini gösterir.
+                        Uluslararası ticaret ve yatırımları etkiler.
+                    </p>
+                </div>
+
+                <!-- Portföy Kartı -->
+                <div class="bg-dark-bg-primary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="portfoy-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-briefcase text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Portföy</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Portföy, bir yatırımcının sahip olduğu tüm finansal varlıkların toplamını ifade eder.
+                        Risk yönetimi için çeşitlendirme önemlidir.
+                    </p>
+                </div>
+
+                <!-- Bütçe Kartı -->
+                <div class="bg-dark-bg-primary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="butce-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-calculator text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Bütçe</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Bütçe, gelir ve giderlerin planlanması ve kontrolüdür. 
+                        Kişisel finansal hedeflere ulaşmak için önemli bir araçtır.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Piyasa Section -->
+    <section id="piyasa" class="py-12 bg-dark-bg-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-8">
+                <i class="fas fa-chart-bar text-blue-500 mr-2"></i>
+                Finansal Piyasalar
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Hisse Senedi Piyasası Kartı -->
+                <div class="bg-dark-bg-secondary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="hisse-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chart-line text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Hisse Senedi Piyasası</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Şirketlerin sermaye artırımı için çıkardıkları hisse senetlerinin alınıp satıldığı piyasadır. 
+                        Yatırımcılar şirketlerin geleceğine ortak olur.
+                    </p>
+                </div>
+
+                <!-- Döviz Piyasası Kartı -->
+                <div class="bg-dark-bg-secondary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="doviz-piyasa-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-exchange-alt text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Döviz Piyasası (Forex)</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Dünyanın en büyük finansal piyasasıdır. Farklı ülkelerin para birimlerinin birbirine karşı değer kazandığı veya kaybettiği piyasadır.
+                    </p>
+                </div>
+
+                <!-- Emtia Piyasası Kartı -->
+                <div class="bg-dark-bg-secondary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="emtia-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-coins text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Emtia Piyasası</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Altın, gümüş, petrol, doğalgaz gibi değerli madenler ve enerji ürünlerinin alınıp satıldığı piyasadır.
+                    </p>
+                </div>
+
+                <!-- Kripto Para Piyasası Kartı -->
+                <div class="bg-dark-bg-secondary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="kripto-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fab fa-bitcoin text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Kripto Para Piyasası</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Bitcoin, Ethereum gibi dijital varlıkların alınıp satıldığı, blockchain teknolojisi üzerine kurulu piyasadır.
+                    </p>
+                </div>
+
+                <!-- Tahvil Piyasası Kartı -->
+                <div class="bg-dark-bg-secondary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="tahvil-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-file-invoice-dollar text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Tahvil Piyasası</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Devlet ve şirketlerin çıkardığı borçlanma senetlerinin alınıp satıldığı piyasadır. 
+                        Sabit getirili yatırım araçları sunar.
+                    </p>
+                </div>
+
+                <!-- Vadeli İşlemler Piyasası Kartı -->
+                <div class="bg-dark-bg-secondary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="vadeli-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-calendar-alt text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Vadeli İşlemler Piyasası</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Gelecekteki bir tarihte teslim edilmek üzere yapılan alım-satım işlemlerinin gerçekleştiği piyasadır.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Yatırım Section -->
+    <section id="yatirim" class="py-12 bg-dark-bg-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-8">
+                <i class="fas fa-piggy-bank text-blue-500 mr-2"></i>
+                Yatırım Stratejileri
+            </h2>
+            <div class="my-8">
+                <a href="https://www.youtube.com/@KanalFinans" target="_blank" class="block bg-dark-bg-secondary hover:bg-dark-bg-primary transition-all duration-300 rounded-lg p-4 border border-gray-600 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="text-lg font-semibold text-white group-hover:text-blue-400 transition-colors duration-300">Kanal Finans Yorum Kanalı</h3>
+                            <p class="text-gray-400 text-sm mt-1 group-hover:text-gray-300 transition-colors duration-300">Güncel Yatırım Stratejileri ve Finansal Bilgileri Takip Etmek İçin Tıklayın</p>
+                        </div>
+                        <i class="fas fa-external-link-alt text-gray-400 group-hover:text-blue-400 group-hover:rotate-12 transition-all duration-300"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Uzun Vadeli Yatırım Kartı -->
+                <div class="bg-dark-bg-primary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="uzun-vadeli-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-hourglass-half text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Uzun Vadeli Yatırım</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Uzun vadeli yatırım stratejisi, genellikle 5 yıl ve üzeri süreler için tasarlanır. 
+                        Bileşik getiri avantajı sunar ve piyasa dalgalanmalarına karşı daha dayanıklıdır.
+                    </p>
+                </div>
+
+                <!-- Kısa Vadeli Yatırım Kartı -->
+                <div class="bg-dark-bg-primary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="kisa-vadeli-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-bolt text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Kısa Vadeli Yatırım</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Kısa vadeli yatırım, genellikle 1 yıldan kısa süreli yatırımları kapsar. 
+                        Hızlı getiri potansiyeli sunar ancak risk seviyesi daha yüksektir.
+                    </p>
+                </div>
+
+                <!-- Portföy Çeşitlendirme Kartı -->
+                <div class="bg-dark-bg-primary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="portfoy-cesitlendirme-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-layer-group text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Portföy Çeşitlendirme</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Portföy çeşitlendirme, riski azaltmak için farklı yatırım araçlarına yatırım yapma stratejisidir. 
+                        "Yumurtaları aynı sepete koymama" prensibine dayanır.
+                    </p>
+                </div>
+
+                <!-- Temel Analiz Kartı -->
+                <div class="bg-dark-bg-primary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="temel-analiz-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chart-pie text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Temel Analiz</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Temel analiz, bir şirketin finansal durumunu, sektörünü ve ekonomik koşulları inceleyerek 
+                        yatırım kararı verme yöntemidir.
+                    </p>
+                </div>
+
+                <!-- Teknik Analiz Kartı -->
+                <div class="bg-dark-bg-primary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="teknik-analiz-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chart-bar text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Teknik Analiz</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Teknik analiz, geçmiş fiyat hareketlerini ve işlem hacimlerini inceleyerek 
+                        gelecekteki fiyat hareketlerini tahmin etme yöntemidir.
+                    </p>
+                </div>
+
+                <!-- Risk Yönetimi Kartı -->
+                <div class="bg-dark-bg-primary rounded-lg p-6 shadow-lg cursor-pointer transition-all duration-300 border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 group feature-card" data-modal="risk-yonetimi-modal">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-shield-alt text-blue-500 text-2xl mr-3 group-hover:text-blue-400 transition-colors duration-300"></i>
+                        <h3 class="text-xl font-semibold text-blue-500 group-hover:text-blue-400 transition-colors duration-300">Risk Yönetimi</h3>
+                    </div>
+                    <p class="text-dark-text-secondary group-hover:text-gray-300 transition-colors duration-300">
+                        Risk yönetimi, yatırım portföyünü korumak ve risk-getiri dengesini sağlamak için 
+                        uygulanan stratejileri içerir.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <!-- Arz-Talep Modal -->
+    <div id="arz-talep-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Arz ve Talep</h3>
+                <button onclick="closeModal('arz-talep-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Arz:</strong> Piyasada sunulan mal ve hizmet miktarını ifade eder. Üreticilerin belirli bir fiyattan satmaya hazır oldukları miktarı gösterir.
+                </p>
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Talep:</strong> Tüketicilerin belirli bir fiyattan satın almak istedikleri mal ve hizmet miktarını ifade eder.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Arz-Talep Dengesi</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Arz > Talep: Fiyatlar düşer</li>
+                        <li>Talep > Arz: Fiyatlar yükselir</li>
+                        <li>Arz = Talep: Denge fiyatı oluşur</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Etkileyen Faktörler</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Üretim maliyetleri</li>
+                        <li>Tüketici tercihleri</li>
+                        <li>Rekabet durumu</li>
+                        <li>Ekonomik koşullar</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Faiz Modal -->
+    <div id="faiz-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Faiz</h3>
+                <button onclick="closeModal('faiz-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Faiz Nedir?</strong> Borç alınan paranın kullanımı karşılığında ödenen bedeldir. Yüzde olarak ifade edilir.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Faiz Türleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Basit Faiz: Anapara üzerinden hesaplanan faiz</li>
+                        <li>Bileşik Faiz: Anapara + Faiz üzerinden hesaplanan faiz</li>
+                        <li>Nominal Faiz: Enflasyon dahil edilmeden hesaplanan faiz</li>
+                        <li>Reel Faiz: Enflasyon düşülerek hesaplanan faiz</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Faizin Ekonomiye Etkileri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Yatırım kararlarını etkiler</li>
+                        <li>Tüketim harcamalarını etkiler</li>
+                        <li>Döviz kurlarını etkiler</li>
+                        <li>Enflasyonu etkiler</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enflasyon Modal -->
+    <div id="enflasyon-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Enflasyon</h3>
+                <button onclick="closeModal('enflasyon-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Enflasyon Nedir?</strong> Fiyatların genel seviyesindeki sürekli artışı ifade eder. Satın alma gücünü düşürür.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Enflasyon Türleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Talep Enflasyonu: Aşırı talep nedeniyle oluşan fiyat artışları</li>
+                        <li>Maliyet Enflasyonu: Üretim maliyetlerindeki artışlar</li>
+                        <li>Para Arzı Enflasyonu: Aşırı para basımı</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Enflasyonun Etkileri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Satın alma gücünü düşürür</li>
+                        <li>Faiz oranlarını etkiler</li>
+                        <li>Yatırım kararlarını etkiler</li>
+                        <li>Ekonomik büyümeyi etkiler</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Deflasyon Modal -->
+    <div id="deflasyon-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Deflasyon</h3>
+                <button onclick="closeModal('deflasyon-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Deflasyon Nedir?</strong> Fiyatların genel seviyesindeki sürekli düşüşü ifade eder. Enflasyonun tersi olarak düşünülebilir.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Deflasyonun Nedenleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Para arzındaki azalma</li>
+                        <li>Talep yetersizliği</li>
+                        <li>Üretim maliyetlerindeki düşüş</li>
+                        <li>Teknolojik gelişmeler</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Deflasyonun Etkileri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Ekonomik büyümeyi yavaşlatır</li>
+                        <li>İşsizliği artırabilir</li>
+                        <li>Borç yükünü artırır</li>
+                        <li>Yatırımları azaltır</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Likidite Modal -->
+    <div id="likidite-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Likidite</h3>
+                <button onclick="closeModal('likidite-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Likidite Nedir?</strong> Bir varlığın nakite dönüştürülebilme kolaylığını ve hızını ifade eder.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Likidite Türleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Piyasa Likiditesi: Alım-satım işlemlerinin kolaylığı</li>
+                        <li>Fonlama Likiditesi: Borçlanma kolaylığı</li>
+                        <li>Varlık Likiditesi: Varlığın nakite dönüştürülebilme hızı</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Likidite Riskleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Piyasa likidite riski</li>
+                        <li>Fonlama likidite riski</li>
+                        <li>Varlık likidite riski</li>
+                        <li>Operasyonel likidite riski</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Risk Modal -->
+    <div id="risk-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Risk ve Getiri</h3>
+                <button onclick="closeModal('risk-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Risk Nedir?</strong> Yatırımın değer kaybetme olasılığını ve bu kaybın büyüklüğünü ifade eder.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Risk Türleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Piyasa Riski: Piyasa koşullarından kaynaklanan risk</li>
+                        <li>Kredi Riski: Borçlunun ödeme yapmama riski</li>
+                        <li>Likidite Riski: Varlığı nakite çevirememe riski</li>
+                        <li>Operasyonel Risk: İş süreçlerinden kaynaklanan risk</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Risk-Getiri İlişkisi</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Yüksek risk = Yüksek getiri potansiyeli</li>
+                        <li>Düşük risk = Düşük getiri potansiyeli</li>
+                        <li>Risk çeşitlendirme önemlidir</li>
+                        <li>Risk toleransı kişiye özeldir</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Borsa Modal -->
+    <div id="borsa-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Borsa</h3>
+                <button onclick="closeModal('borsa-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Borsa Nedir?</strong> Menkul kıymetlerin alınıp satıldığı organize piyasadır. Şirketlerin hisse senetleri, tahviller ve diğer finansal araçlar burada işlem görür.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Borsa Türleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Hisse Senedi Borsası</li>
+                        <li>Tahvil ve Bono Borsası</li>
+                        <li>Vadeli İşlemler Borsası</li>
+                        <li>Emtia Borsası</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Borsanın Özellikleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Şeffaf fiyat oluşumu</li>
+                        <li>Likidite sağlar</li>
+                        <li>Risk yönetimi imkanı</li>
+                        <li>Ekonomik göstergeleri yansıtır</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Döviz Kuru Modal -->
+    <div id="doviz-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Döviz Kuru</h3>
+                <button onclick="closeModal('doviz-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Döviz Kuru Nedir?</strong> Bir ülkenin para biriminin başka bir ülkenin para birimi karşısındaki değerini gösterir.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Kur Türleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Nominal Kur: Piyasada oluşan kur</li>
+                        <li>Reel Kur: Enflasyon farkı düzeltilmiş kur</li>
+                        <li>Çapraz Kur: İki yabancı para birimi arasındaki kur</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Kuru Etkileyen Faktörler</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Faiz oranları</li>
+                        <li>Enflasyon oranları</li>
+                        <li>Ekonomik büyüme</li>
+                        <li>Siyasi istikrar</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portföy Modal -->
+    <div id="portfoy-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Portföy</h3>
+                <button onclick="closeModal('portfoy-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Portföy Nedir?</strong> Bir yatırımcının sahip olduğu tüm finansal varlıkların toplamını ifade eder.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Portföy Türleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Hisse Senedi Portföyü</li>
+                        <li>Tahvil Portföyü</li>
+                        <li>Karma Portföy</li>
+                        <li>Uluslararası Portföy</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Portföy Yönetimi</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Risk çeşitlendirme</li>
+                        <li>Varlık dağılımı</li>
+                        <li>Düzenli gözden geçirme</li>
+                        <li>Hedef odaklı yönetim</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bütçe Modal -->
+    <div id="butce-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Bütçe</h3>
+                <button onclick="closeModal('butce-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Bütçe Nedir?</strong> Gelir ve giderlerin planlanması ve kontrolüdür. Kişisel finansal hedeflere ulaşmak için önemli bir araçtır.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Bütçe Türleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Kişisel Bütçe</li>
+                        <li>Aile Bütçesi</li>
+                        <li>İşletme Bütçesi</li>
+                        <li>Devlet Bütçesi</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Bütçe Yönetimi</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Gelir-gider takibi</li>
+                        <li>Tasarruf planlaması</li>
+                        <li>Borç yönetimi</li>
+                        <li>Yatırım planlaması</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Piyasa Modals -->
+    <!-- Hisse Senedi Piyasası Modal -->
+    <div id="hisse-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Hisse Senedi Piyasası</h3>
+                <button onclick="closeModal('hisse-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Hisse Senedi Piyasası Nedir?</strong> Şirketlerin sermaye artırımı için çıkardıkları hisse senetlerinin alınıp satıldığı organize piyasadır.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Hisse Senedi Yatırımının Özellikleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Şirket karından pay alma hakkı</li>
+                        <li>Ortaklık hakkı</li>
+                        <li>Yüksek getiri potansiyeli</li>
+                        <li>Yüksek risk içerir</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Yatırım Stratejileri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Temel analiz</li>
+                        <li>Teknik analiz</li>
+                        <li>Portföy çeşitlendirme</li>
+                        <li>Uzun vadeli yatırım</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Döviz Piyasası Modal -->
+    <div id="doviz-piyasa-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Döviz Piyasası (Forex)</h3>
+                <button onclick="closeModal('doviz-piyasa-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Forex Nedir?</strong> Dünyanın en büyük finansal piyasasıdır. 24 saat işlem yapılabilen, yüksek likiditeye sahip bir piyasadır.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Forex'in Özellikleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>24 saat işlem imkanı</li>
+                        <li>Yüksek likidite</li>
+                        <li>Kaldıraçlı işlem</li>
+                        <li>İki yönlü işlem yapabilme</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Etkileyen Faktörler</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Merkez bankası kararları</li>
+                        <li>Ekonomik veriler</li>
+                        <li>Siyasi gelişmeler</li>
+                        <li>Piyasa psikolojisi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Emtia Piyasası Modal -->
+    <div id="emtia-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Emtia Piyasası</h3>
+                <button onclick="closeModal('emtia-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Emtia Piyasası Nedir?</strong> Değerli madenler, enerji ürünleri ve tarım ürünlerinin alınıp satıldığı piyasadır.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Emtia Türleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Değerli madenler (Altın, Gümüş)</li>
+                        <li>Enerji ürünleri (Petrol, Doğalgaz)</li>
+                        <li>Tarım ürünleri (Buğday, Mısır)</li>
+                        <li>Endüstriyel metaller (Bakır, Çelik)</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Yatırım Avantajları</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Enflasyona karşı koruma</li>
+                        <li>Portföy çeşitlendirme</li>
+                        <li>Spekülatif fırsatlar</li>
+                        <li>Fiziki varlık değeri</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kripto Para Piyasası Modal -->
+    <div id="kripto-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Kripto Para Piyasası</h3>
+                <button onclick="closeModal('kripto-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Kripto Para Nedir?</strong> Blockchain teknolojisi üzerine kurulu, merkezi olmayan dijital varlıklardır.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Öne Çıkan Kripto Paralar</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Bitcoin (BTC)</li>
+                        <li>Ethereum (ETH)</li>
+                        <li>Binance Coin (BNB)</li>
+                        <li>Cardano (ADA)</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Kripto Para Özellikleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Merkeziyetsiz yapı</li>
+                        <li>Şeffaf işlemler</li>
+                        <li>Yüksek volatilite</li>
+                        <li>24/7 işlem imkanı</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tahvil Piyasası Modal -->
+    <div id="tahvil-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Tahvil Piyasası</h3>
+                <button onclick="closeModal('tahvil-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Tahvil Nedir?</strong> Devlet ve şirketlerin borçlanma amacıyla çıkardığı menkul kıymetlerdir.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Tahvil Türleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Devlet Tahvili</li>
+                        <li>Kurumsal Tahvil</li>
+                        <li>Sabit Faizli Tahvil</li>
+                        <li>Değişken Faizli Tahvil</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Yatırım Avantajları</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Düzenli gelir</li>
+                        <li>Düşük risk</li>
+                        <li>Faiz geliri</li>
+                        <li>Vade seçenekleri</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vadeli İşlemler Piyasası Modal -->
+    <div id="vadeli-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Vadeli İşlemler Piyasası</h3>
+                <button onclick="closeModal('vadeli-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Vadeli İşlem Nedir?</strong> Gelecekteki bir tarihte teslim edilmek üzere yapılan alım-satım sözleşmeleridir.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Vadeli İşlem Türleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Vadeli Döviz İşlemleri</li>
+                        <li>Vadeli Emtia İşlemleri</li>
+                        <li>Vadeli Faiz İşlemleri</li>
+                        <li>Vadeli Hisse Senedi İşlemleri</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Kullanım Amaçları</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Risk yönetimi</li>
+                        <li>Spekülasyon</li>
+                        <li>Arbitraj</li>
+                        <li>Fiyat keşfi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Yatırım Modals -->
+    <!-- Uzun Vadeli Yatırım Modal -->
+    <div id="uzun-vadeli-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Uzun Vadeli Yatırım</h3>
+                <button onclick="closeModal('uzun-vadeli-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Uzun Vadeli Yatırım Nedir?</strong> Genellikle 5 yıl ve üzeri süreler için tasarlanan, bileşik getiri avantajı sunan yatırım stratejisidir.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Avantajları</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Bileşik getiri avantajı</li>
+                        <li>Piyasa dalgalanmalarına karşı dayanıklılık</li>
+                        <li>Düşük işlem maliyetleri</li>
+                        <li>Vergi avantajları</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Uygun Yatırım Araçları</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Hisse senetleri</li>
+                        <li>Uzun vadeli tahviller</li>
+                        <li>Emeklilik fonları</li>
+                        <li>Gayrimenkul yatırımları</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kısa Vadeli Yatırım Modal -->
+    <div id="kisa-vadeli-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Kısa Vadeli Yatırım</h3>
+                <button onclick="closeModal('kisa-vadeli-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Kısa Vadeli Yatırım Nedir?</strong> Genellikle 1 yıldan kısa süreli, hızlı getiri potansiyeli sunan yatırım stratejisidir.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Özellikleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Yüksek likidite</li>
+                        <li>Hızlı getiri potansiyeli</li>
+                        <li>Yüksek risk seviyesi</li>
+                        <li>Aktif yönetim gerektirir</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Uygun Yatırım Araçları</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Forex işlemleri</li>
+                        <li>Kripto para</li>
+                        <li>Vadeli işlemler</li>
+                        <li>Kısa vadeli tahviller</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portföy Çeşitlendirme Modal -->
+    <div id="portfoy-cesitlendirme-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Portföy Çeşitlendirme</h3>
+                <button onclick="closeModal('portfoy-cesitlendirme-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Portföy Çeşitlendirme Nedir?</strong> Risk yönetimi için farklı yatırım araçlarına yatırım yapma stratejisidir.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Çeşitlendirme Türleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Sektör çeşitlendirmesi</li>
+                        <li>Varlık sınıfı çeşitlendirmesi</li>
+                        <li>Coğrafi çeşitlendirme</li>
+                        <li>Vade çeşitlendirmesi</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Faydaları</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Risk azaltma</li>
+                        <li>Getiri stabilizasyonu</li>
+                        <li>Fırsat çeşitliliği</li>
+                        <li>Piyasa dalgalanmalarına karşı koruma</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Temel Analiz Modal -->
+    <div id="temel-analiz-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Temel Analiz</h3>
+                <button onclick="closeModal('temel-analiz-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Temel Analiz Nedir?</strong> Şirketin finansal durumunu, sektörünü ve ekonomik koşulları inceleyerek yatırım kararı verme yöntemidir.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">İncelenen Faktörler</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Finansal tablolar</li>
+                        <li>Sektör analizi</li>
+                        <li>Makroekonomik göstergeler</li>
+                        <li>Şirket yönetimi</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Temel Analiz Araçları</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Finansal oranlar</li>
+                        <li>Nakit akışı analizi</li>
+                        <li>Karşılaştırmalı analiz</li>
+                        <li>Trend analizi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Teknik Analiz Modal -->
+    <div id="teknik-analiz-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Teknik Analiz</h3>
+                <button onclick="closeModal('teknik-analiz-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Teknik Analiz Nedir?</strong> Geçmiş fiyat hareketlerini ve işlem hacimlerini inceleyerek gelecekteki fiyat hareketlerini tahmin etme yöntemidir.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Teknik Göstergeler</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Hareketli ortalamalar</li>
+                        <li>RSI (Göreceli Güç Endeksi)</li>
+                        <li>MACD (Hareketli Ortalama Yakınsama/Iraksama)</li>
+                        <li>Bollinger Bantları</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Analiz Yöntemleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Grafik formasyonları</li>
+                        <li>Destek ve direnç seviyeleri</li>
+                        <li>Trend analizi</li>
+                        <li>Hacim analizi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Risk Yönetimi Modal -->
+    <div id="risk-yonetimi-modal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="bg-dark-bg-secondary rounded-lg p-8 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-500">Risk Yönetimi</h3>
+                <button onclick="closeModal('risk-yonetimi-modal')" class="text-dark-text-secondary hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <p class="text-dark-text-secondary">
+                    <strong class="text-white">Risk Yönetimi Nedir?</strong> Yatırım portföyünü korumak ve risk-getiri dengesini sağlamak için uygulanan stratejilerdir.
+                </p>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Risk Yönetimi Stratejileri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Stop-loss kullanımı</li>
+                        <li>Pozisyon büyüklüğü yönetimi</li>
+                        <li>Hedef belirleme</li>
+                        <li>Risk/ödül oranı hesaplama</li>
+                    </ul>
+                </div>
+                <div class="bg-dark-bg-primary p-4 rounded-lg">
+                    <h4 class="text-lg font-semibold mb-2 text-blue-500">Risk Türleri</h4>
+                    <ul class="list-disc list-inside text-dark-text-secondary space-y-2">
+                        <li>Piyasa riski</li>
+                        <li>Likidite riski</li>
+                        <li>Kredi riski</li>
+                        <li>Operasyonel risk</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark-bg-primary py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-dark-text-secondary">
+                &copy; <a href="https://www.instagram.com/denizcnmy" target="_blank">Deniz Canmaya</a> Tüm hakları saklıdır .
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="fixed bottom-8 right-8 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-3 shadow-lg transition-all duration-300 opacity-0 invisible transform translate-y-4 hover:scale-110 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

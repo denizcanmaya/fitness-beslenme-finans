@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beslenme Programı Sonuçları</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            primary: '#1a1b1e',
+                            secondary: '#2c2e33',
+                            accent: '#3b82f6',
+                            text: '#e2e8f0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-primary min-h-screen text-dark-text font-['Inter']">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <div id="resultContent" class="bg-dark-secondary rounded-xl shadow-xl p-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold mb-4 text-white">Günlük Beslenme İhtiyaçları</h1>
+                <p class="text-gray-400 text-lg">Kişiselleştirilmiş Beslenme Programı</p>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                    <i class="fas fa-user text-emerald-500"></i>
+                    Kişisel Bilgiler
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-dark-primary/50 p-4 rounded-lg flex justify-between items-center">
+                        <span class="text-gray-400">Ad Soyad:</span>
+                        <span id="kisiAdi" class="font-medium">-</span>
+                    </div>
+                    <div class="bg-dark-primary/50 p-4 rounded-lg flex justify-between items-center">
+                        <span class="text-gray-400">Yaş:</span>
+                        <span id="yas" class="font-medium">-</span>
+                    </div>
+                    <div class="bg-dark-primary/50 p-4 rounded-lg flex justify-between items-center">
+                        <span class="text-gray-400">Kilo:</span>
+                        <span id="kilo" class="font-medium">-</span>
+                    </div>
+                    <div class="bg-dark-primary/50 p-4 rounded-lg flex justify-between items-center">
+                        <span class="text-gray-400">Boy:</span>
+                        <span id="boy" class="font-medium">-</span>
+                    </div>
+                    <div class="bg-dark-primary/50 p-4 rounded-lg flex justify-between items-center">
+                        <span class="text-gray-400">Cinsiyet:</span>
+                        <span id="cinsiyet" class="font-medium">-</span>
+                    </div>
+                    <div class="bg-dark-primary/50 p-4 rounded-lg flex justify-between items-center">
+                        <span class="text-gray-400">Hedef:</span>
+                        <span id="hedef" class="font-medium">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                    <i class="fas fa-chart-pie text-amber-500"></i>
+                    Makro Besinler
+                </h3>
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="bg-dark-primary/50 p-6 rounded-lg text-center transform transition-transform hover:scale-105">
+                            <i class="fas fa-fire text-4xl text-red-500 mb-4"></i>
+                            <h4 class="text-lg font-medium mb-2">Kalori</h4>
+                            <p id="kalori" class="text-2xl font-bold">-</p>
+                        </div>
+                        <div class="bg-dark-primary/50 p-6 rounded-lg text-center transform transition-transform hover:scale-105">
+                            <i class="fas fa-drumstick-bite text-4xl text-emerald-500 mb-4"></i>
+                            <h4 class="text-lg font-medium mb-2">Protein</h4>
+                            <p id="protein" class="text-2xl font-bold">-</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="bg-dark-primary/50 p-6 rounded-lg text-center transform transition-transform hover:scale-105">
+                            <i class="fas fa-cheese text-4xl text-amber-500 mb-4"></i>
+                            <h4 class="text-lg font-medium mb-2">Yağ</h4>
+                            <p id="yag" class="text-2xl font-bold">-</p>
+                        </div>
+                        <div class="bg-dark-primary/50 p-6 rounded-lg text-center transform transition-transform hover:scale-105">
+                            <i class="fas fa-bread-slice text-4xl text-orange-500 mb-4"></i>
+                            <h4 class="text-lg font-medium mb-2">Karbonhidrat</h4>
+                            <p id="karbonhidrat" class="text-2xl font-bold">-</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                    <i class="fas fa-calendar-alt text-emerald-500"></i>
+                    Beslenme Listesi
+                </h3>
+                <div class="my-6">
+                    <a href="https://www.youtube.com/watch?v=JnZj2tg9VAE&list=PLzN5jlyk7TvTwzZ79BWcqoWCiSc1Z4mqJ" target="_blank" class="block bg-dark-primary hover:bg-dark-accent/20 transition-all duration-300 rounded-lg p-4 border border-gray-600 hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-500/20 group">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="text-lg font-semibold text-white group-hover:text-emerald-400 transition-colors duration-300">Fit Tarif İçerikleri</h3>
+                                <p class="text-gray-400 text-sm mt-1 group-hover:text-gray-300 transition-colors duration-300">Fit yemek tarifleri ve önerileri için tıklayın</p>
+                            </div>
+                            <i class="fab fa-youtube text-gray-400 group-hover:text-emerald-400 group-hover:scale-110 transition-all duration-300 text-xl"></i>
+                        </div>
+                    </a>
+                </div>
+                <div id="ogunPlan" class="space-y-6"></div>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                    <i class="fas fa-info-circle text-amber-500"></i>
+                    Beslenme Notları
+                </h3>
+                <ul id="beslenmeNotlari" class="space-y-4"></ul>
+            </div>
+
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                    <i class="fas fa-lightbulb text-emerald-500"></i>
+                    Genel Beslenme Önerileri
+                </h3>
+                <ul id="genelOneriler" class="space-y-4"></ul>
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:justify-start items-center sm:space-x-4 space-y-4 sm:space-y-0">
+                <button id="indirButton" class="w-full sm:w-auto bg-white text-dark-primary font-semibold py-3 px-6 rounded-lg border-2 border-transparent hover:bg-transparent hover:border-white hover:text-white transition-all duration-300">
+                    Listeyi İndir
+                </button>
+                <button id="hesaplaButton" class="w-full sm:w-auto bg-white text-dark-primary font-semibold py-3 px-6 rounded-lg border-2 border-transparent hover:bg-transparent hover:border-white hover:text-white transition-all duration-300">
+                    Tekrar Hesapla
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/sonuc.js"></script>
+</body>
+</html> 

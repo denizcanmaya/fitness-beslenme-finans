@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antrenman Programı Sonuçları</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            primary: '#1a1b1e',
+                            secondary: '#2c2e33',
+                            accent: '#3b82f6',
+                            text: '#e2e8f0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-primary min-h-screen text-dark-text font-['Inter']">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <div id="resultContent" class="bg-dark-secondary rounded-xl shadow-xl p-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold mb-4 text-white">Kişiselleştirilmiş Antrenman Programı</h1>
+                <p class="text-gray-400 text-lg">Program Detayları</p>
+            </div>
+
+            <!-- Program Bilgileri -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                    <i class="fas fa-info-circle text-emerald-500"></i>
+                    Program Bilgileri
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-dark-primary/50 p-4 rounded-lg flex justify-between items-center">
+                        <span class="text-gray-400">Cinsiyet:</span>
+                        <span id="gender" class="font-medium">-</span>
+                    </div>
+                    <div class="bg-dark-primary/50 p-4 rounded-lg flex justify-between items-center">
+                        <span class="text-gray-400">Seviye:</span>
+                        <span id="level" class="font-medium">-</span>
+                    </div>
+                    <div class="bg-dark-primary/50 p-4 rounded-lg flex justify-between items-center">
+                        <span class="text-gray-400">Program Stili:</span>
+                        <span id="programStyle" class="font-medium">-</span>
+                    </div>
+                    <div class="bg-dark-primary/50 p-4 rounded-lg flex justify-between items-center">
+                        <span class="text-gray-400">Gün Sayısı:</span>
+                        <span id="days" class="font-medium">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Isınma Bölümü -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                    <i class="fas fa-fire text-amber-500"></i>
+                    Isınma Periyodu (5-7 dakika)
+                </h3>
+                <div class="space-y-4">
+                    <div class="bg-dark-primary/50 p-6 rounded-lg">
+                        <h4 class="text-lg font-medium mb-4">Kardiyo Seçenekleri</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-500 mt-1">✓</span>
+                                <span class="text-gray-300">Yürüyüş Bandı: 4.5 hız, eğimsiz veya düşük eğim</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-500 mt-1">✓</span>
+                                <span class="text-gray-300">Bisiklet: Orta tempoda</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-dark-primary/50 p-6 rounded-lg">
+                        <h4 class="text-lg font-medium mb-4">Mobilite Egzersizleri (Her biri 30 saniye)</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-500 mt-1">✓</span>
+                                <span class="text-gray-300">Omuz Rotator Cuff Egzersizleri</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-500 mt-1">✓</span>
+                                <span class="text-gray-300">Torakal Mobilite Egzersizleri</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-500 mt-1">✓</span>
+                                <span class="text-gray-300">Hip Mobilite Egzersizleri</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Antrenman Programı -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                    <i class="fas fa-dumbbell text-emerald-500"></i>
+                    Antrenman Programı
+                </h3>
+                <div class="mb-6">
+                    <a href="https://musclewiki.com/" target="_blank" class="block bg-dark-primary hover:bg-dark-accent/20 transition-all duration-300 rounded-lg p-4 border border-gray-600 hover:border-emerald-500 hover:shadow-lg hover:shadow-emerald-500/20 group">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="text-lg font-semibold text-white group-hover:text-emerald-400 transition-colors duration-300">Egzersiz Kütüphanesi</h3>
+                                <p class="text-gray-400 text-sm mt-1 group-hover:text-gray-300 transition-colors duration-300">Detaylı egzersiz hareketleri ve teknikleri için tıklayın</p>
+                            </div>
+                            <i class="fas fa-external-link-alt text-gray-400 group-hover:text-emerald-400 group-hover:rotate-12 transition-all duration-300"></i>
+                        </div>
+                    </a>
+                </div>
+                <div id="workoutPlan" class="space-y-6">
+                    <!-- Antrenman günleri buraya dinamik olarak eklenecek -->
+                </div>
+            </div>
+
+            <!-- Soğuma ve Esneme -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+                    <i class="fas fa-wind text-amber-500"></i>
+                    Soğuma ve Esneme (5-10 dakika)
+                </h3>
+                <div class="bg-dark-primary/50 p-6 rounded-lg">
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-500 mt-1">✓</span>
+                            <span class="text-gray-300">Boyun Esnetme: Her yöne 30 saniye</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-500 mt-1">✓</span>
+                            <span class="text-gray-300">Omuz Esnetme: Her kol için 30 saniye</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-500 mt-1">✓</span>
+                            <span class="text-gray-300">Göğüs Esnetme: 30 saniye</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-500 mt-1">✓</span>
+                            <span class="text-gray-300">Hamstring Esnetme: Her bacak için 30 saniye</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-500 mt-1">✓</span>
+                            <span class="text-gray-300">Quad Esnetme: Her bacak için 30 saniye</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-emerald-500 mt-1">✓</span>
+                            <span class="text-gray-300">Kalça Esnetme: Her taraf için 30 saniye</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:justify-start items-center sm:space-x-4 space-y-4 sm:space-y-0">
+                <button id="indirButton" class="w-full sm:w-auto bg-white text-dark-primary font-semibold py-3 px-6 rounded-lg border-2 border-transparent hover:bg-transparent hover:border-white hover:text-white transition-all duration-300">
+                    Programı İndir
+                </button>
+                <button id="hesaplaButton" class="w-full sm:w-auto bg-white text-dark-primary font-semibold py-3 px-6 rounded-lg border-2 border-transparent hover:bg-transparent hover:border-white hover:text-white transition-all duration-300">
+                    Tekrar Hesapla
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/antrenman-sonuc.js"></script>
+</body>
+</html> 
