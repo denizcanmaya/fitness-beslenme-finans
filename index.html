@@ -68,36 +68,51 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-gray-400 mb-2">Cinsiyet</label>
-                            <select id="gender" name="gender" required
-                                class="w-full bg-dark-primary border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-emerald-500 appearance-none">
-                                <option value="">Seçiniz</option>
-                                <option value="male">Erkek</option>
-                                <option value="female">Kadın</option>
-                            </select>
+                            <div class="relative">
+                                <select id="gender" name="gender" required
+                                    class="w-full bg-dark-primary border border-gray-600 rounded-lg px-4 py-2 pr-10 text-white focus:outline-none focus:border-emerald-500 appearance-none">
+                                    <option value="">Seçiniz</option>
+                                    <option value="male">Erkek</option>
+                                    <option value="female">Kadın</option>
+                                </select>
+                                <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </div>
                         </div>
                         <div>
                             <label class="block text-gray-400 mb-2">Hedef</label>
-                            <select id="goal" name="goal" required
-                                class="w-full bg-dark-primary border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-emerald-500 appearance-none">
-                                <option value="">Seçiniz</option>
-                                <option value="loss">Kilo Verme</option>
-                                <option value="maintain">Kilo Koruma</option>
-                                <option value="gain">Kilo Alma</option>
-                            </select>
+                            <div class="relative">
+                                <select id="goal" name="goal" required
+                                    class="w-full bg-dark-primary border border-gray-600 rounded-lg px-4 py-2 pr-10 text-white focus:outline-none focus:border-emerald-500 appearance-none">
+                                    <option value="">Seçiniz</option>
+                                    <option value="loss">Kilo Verme</option>
+                                    <option value="maintain">Kilo Koruma</option>
+                                    <option value="gain">Kilo Alma</option>
+                                </select>
+                                <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </div>
                         </div>
                     </div>
 
                     <div>
                         <label class="block text-gray-400 mb-2">Aktivite Seviyesi</label>
-                        <select id="activity" name="activity" required
-                            class="w-full bg-dark-primary border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-emerald-500 appearance-none">
-                            <option value="">Seçiniz</option>
-                            <option value="1.2">Hareketsiz (Günlük aktivite yok)</option>
-                            <option value="1.375">Hafif Aktif (Haftada 1-3 gün egzersiz)</option>
-                            <option value="1.55">Orta Aktif (Haftada 3-5 gün egzersiz)</option>
-                            <option value="1.725">Çok Aktif (Haftada 6-7 gün egzersiz)</option>
-                            <option value="1.9">Ekstra Aktif (Günde 2 kez egzersiz)</option>
-                        </select>
+                        <div class="relative">
+                            <select id="activity" name="activity" required
+                                class="w-full bg-dark-primary border border-gray-600 rounded-lg px-4 py-2 pr-10 text-white focus:outline-none focus:border-emerald-500 appearance-none">
+                                <option value="">Seçiniz</option>
+                                <option value="1.2">Hareketsiz (Günlük aktivite yok)</option>
+                                <option value="1.375">Hafif Aktif (Haftada 1-3 gün egzersiz)</option>
+                                <option value="1.55">Orta Aktif (Haftada 3-5 gün egzersiz)</option>
+                                <option value="1.725">Çok Aktif (Haftada 6-7 gün egzersiz)</option>
+                                <option value="1.9">Ekstra Aktif (Günde 2 kez egzersiz)</option>
+                            </select>
+                            <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </div>
                     </div>
 
                     <div class="text-center sm:text-left">
@@ -119,37 +134,57 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label for="antrenmanGender" class="block text-sm font-medium text-gray-400 mb-2">Cinsiyet</label>
-                            <select id="antrenmanGender" name="antrenmanGender" required class="w-full bg-dark-primary text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-dark-accent appearance-none">
-                                <option value="">Seçiniz</option>
-                                <option value="male">Erkek</option>
-                                <option value="female">Kadın</option>
-                            </select>
+                            <div class="relative">
+                                <select id="antrenmanGender" name="antrenmanGender" required class="w-full bg-dark-primary text-white rounded-lg px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-dark-accent appearance-none">
+                                    <option value="">Seçiniz</option>
+                                    <option value="male">Erkek</option>
+                                    <option value="female">Kadın</option>
+                                </select>
+                                <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </div>
                         </div>
                         <div>
                             <label for="level" class="block text-sm font-medium text-gray-400 mb-2">Seviye</label>
-                            <select id="level" name="level" required class="w-full bg-dark-primary text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-dark-accent appearance-none">
-                                <option value="">Seçiniz</option>
-                                <option value="beginner">Başlangıç</option>
-                                <option value="intermediate">Orta Seviye</option>
-                                <option value="advanced">İleri Seviye</option>
-                            </select>
+                            <div class="relative">
+                                <select id="level" name="level" required class="w-full bg-dark-primary text-white rounded-lg px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-dark-accent appearance-none">
+                                    <option value="">Seçiniz</option>
+                                    <option value="beginner">Başlangıç</option>
+                                    <option value="intermediate">Orta Seviye</option>
+                                    <option value="advanced">İleri Seviye</option>
+                                </select>
+                                <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </div>
                         </div>
                         <div>
                             <label for="programStyle" class="block text-sm font-medium text-gray-400 mb-2">Program Stili</label>
-                            <select id="programStyle" name="programStyle" required class="w-full bg-dark-primary text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-dark-accent appearance-none">
-                                <option value="">Seçiniz</option>
-                                <option value="fullbody">Full Body</option>
-                                <option value="ppl">Push Pull Legs</option>
-                            </select>
+                            <div class="relative">
+                                <select id="programStyle" name="programStyle" required class="w-full bg-dark-primary text-white rounded-lg px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-dark-accent appearance-none">
+                                    <option value="">Seçiniz</option>
+                                    <option value="fullbody">Full Body</option>
+                                    <option value="ppl">Push Pull Legs</option>
+                                </select>
+                                <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </div>
                         </div>
                         <div>
                             <label for="days" class="block text-sm font-medium text-gray-400 mb-2">Gün Sayısı</label>
-                            <select id="days" name="days" required class="w-full bg-dark-primary text-white rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-dark-accent appearance-none">
-                                <option value="">Seçiniz</option>
-                                <option value="2">2 Gün</option>
-                                <option value="3">3 Gün</option>
-                                <option value="4">4 Gün</option>
-                            </select>
+                            <div class="relative">
+                                <select id="days" name="days" required class="w-full bg-dark-primary text-white rounded-lg px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-dark-accent appearance-none">
+                                    <option value="">Seçiniz</option>
+                                    <option value="2">2 Gün</option>
+                                    <option value="3">3 Gün</option>
+                                    <option value="4">4 Gün</option>
+                                </select>
+                                <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </div>
                         </div>
                     </div>
                     <div class="mb-6">
